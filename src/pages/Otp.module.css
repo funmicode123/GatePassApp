@@ -1,0 +1,187 @@
+.otpContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  padding: 2rem;
+}
+
+.otpBox {
+  width: 100%;
+  max-width: 450px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--text-muted, rgba(255, 255, 255, 0.6));
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.otpInput {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 2.5rem;
+  text-align: center;
+  letter-spacing: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.otpInput:focus {
+  outline: none;
+  border-color: var(--primary, #646cff);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.verifyBtn, .scanBtn, .doneBtn, .cancelScanBtn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+}
+
+.verifyBtn {
+  background: var(--primary-gradient, linear-gradient(135deg, #646cff 0%, #b34aff 100%));
+  color: white;
+}
+
+.scanBtn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.scanBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.divider {
+  margin: 1.5rem 0;
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.divider::before, .divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 1rem;
+}
+
+.scannerWrapper {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#reader {
+  border-radius: 12px;
+  overflow: hidden;
+  border: none !important;
+  background: white;
+}
+
+.cancelScanBtn {
+  background: rgba(255, 82, 82, 0.1);
+  color: #ff5252;
+  border: 1px solid rgba(255, 82, 82, 0.2);
+}
+
+.statusCard {
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.successCard {
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+}
+
+.errorCard {
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+}
+
+.blacklistAlert {
+  background: rgba(255, 0, 0, 0.2);
+  border: 2px solid #ff0000;
+  animation: shake 0.5s ease-in-out infinite;
+}
+
+.statusMessage {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.addressBox {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.addressBox p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.5rem;
+}
+
+.addressBox strong {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.doneBtn {
+  background: #fff;
+  color: #000;
+  margin-top: 1rem;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .otpBox {
+    padding: 2rem;
+  }
+}

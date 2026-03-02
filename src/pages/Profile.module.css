@@ -1,0 +1,140 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    padding: 2rem;
+}
+
+.profileCard {
+    width: 100%;
+    max-width: 800px;
+    padding: 2.5rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.form {
+    margin-top: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.inputGroup label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.inputGroup input {
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.inputGroup input:focus {
+    outline: none;
+    border-color: var(--primary-color, #646cff);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.inputGroup input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: transparent;
+}
+
+.apartmentSection {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.apartmentSection h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.editBtn,
+.saveBtn,
+.cancelBtn {
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.editBtn,
+.saveBtn {
+    background: var(--primary-gradient, linear-gradient(135deg, #646cff 0%, #b34aff 100%));
+    color: white;
+}
+
+.editBtn:hover,
+.saveBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(100, 108, 255, 0.4);
+}
+
+.cancelBtn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.cancelBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.message {
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(100, 255, 100, 0.1);
+    color: #4ade80;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+}
