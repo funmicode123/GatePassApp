@@ -43,7 +43,11 @@ const VisitingLog = () => {
                   {log.checkOutTime ? new Date(log.checkOutTime).toLocaleString() : "Active In-Estate"}
                 </td>
                 <td>
-                  <span className={`${styles.status_badge} ${log.otpStatus === 'USED' ? styles.status_active : styles.status_expired}`}>
+                  <span className={`${styles.status_badge} ${
+                    log.otpStatus === 'USED' ? styles.status_active : 
+                    log.otpStatus === 'EXITED' ? styles.status_exited : 
+                    styles.status_expired
+                  }`}>
                     {log.otpStatus}
                   </span>
                 </td>
